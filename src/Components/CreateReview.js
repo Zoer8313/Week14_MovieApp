@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import ReactStars from "./ReactStars";
 
 export default function CreateReview() {
 
@@ -28,11 +29,8 @@ export default function CreateReview() {
             onChange = {e => handleName(e.target.value)}>
             </input>   
         </div><br />
-        <div className = "rating-input">
-            <input type = "text" 
-            placeholder = "--/10" 
-            onChange = {e => handleName(e.target.value)}>
-            </input>   
+        <div className = "rating-input"> 
+            <ReactStars />
         </div><br />
         <div>
           <textarea 

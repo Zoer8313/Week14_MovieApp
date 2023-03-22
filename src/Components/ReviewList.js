@@ -1,20 +1,22 @@
+import ReactStars from "./ReactStars";
+
 const ReviewList = [
     {
         id: 1,
         name: "Roger",
-        rating: "3/10",
+        rating: <ReactStars />,
         comment: "Mediocre at best"
     },
     {
         id: 2,
         name: "Mark",
-        rating: "5/10",
+        rating: <ReactStars />,
         comment: "It was a'ight"
     },
     {
         id: 3,
         name: "Nancy",
-        rating: "9/10",
+        rating: <ReactStars />,
         comment: "Almost the best I've ever seen!"
     }
 ];
