@@ -3,20 +3,33 @@ import ReactStars from "./ReactStars";
 
 export default function CreateReview() {
 
-    const [rating, setRating] = useState(0);
+    //const [rating, setRating] = useState(0);
     const [name, setName] = useState("");
     const [comment, setComment] = useState("");
+    const [allReviews, setAllReviews] = useState([]);
+    const [starRating, setStarRating] = useState(0);
 
-    function handleName(value) {
-        setName(value);
+    function handleName(e) {
+        setName(e.target.value);
     }
 
     function handleComment(value) {
         setComment(value);
     }
 
-    function processForm() {
+    function handleStarRating(ratingValue) {
+        setStarRating(ratingValue);
         
+    }
+
+    function processForm() {
+        let newReview = {
+            name: name,
+            comment: comment,
+            starRating: starRating
+        }
+
+        setAllReviews([...allReviews, newReview]);
     }
 
     return (
@@ -26,11 +39,12 @@ export default function CreateReview() {
         <div className = "name-input">
             <input type = "text" 
             placeholder = "Name Here"
-            onChange = {e => handleName(e.target.value)}>
+            onChange = {handleName}>
             </input>   
         </div><br />
         <div className = "rating-input"> 
-            <ReactStars />
+            <ReactStars handleStarRating = {handleStarRating} starRating = {starRating} />
+            {/* pass in state and handleStarRating function as props to star component */}
         </div><br />
         <div>
           <textarea 
