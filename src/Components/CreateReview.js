@@ -30,7 +30,13 @@ export default function CreateReview() {
         }
 
         setAllReviews([...allReviews, newReview]);
+
+        setName("");
+        setComment("");
+        setStarRating(0);
     }
+
+
 
     return (
         <div>
@@ -39,6 +45,7 @@ export default function CreateReview() {
         <div className = "name-input">
             <input type = "text" 
             placeholder = "Name Here"
+            value = {name}//so we can reset to blank
             onChange = {handleName}>
             </input>   
         </div><br />
@@ -51,6 +58,7 @@ export default function CreateReview() {
           className = "comment-input"
           defaultValue = { comment }
           placeholder = "Comments Here"
+          value = {comment}//so we can reset to blank
           onChange = {e => handleComment(e.target.value)}
           ></textarea> 
        </div> 
@@ -59,6 +67,20 @@ export default function CreateReview() {
           onClick = {() => processForm()}
         >Submit</button>
        </div>
+
+        <div> 
+                <h2><b>Reviews:</b></h2>
+                <ul>
+                    {allReviews.map((review, index) => (
+                        <li key={index}>
+                            <p><b>Name: </b>{review.name}</p>
+                            <p><b>Comment: </b>{review.comment}</p>
+                            <p><b>Star Rating: </b>{review.starRating}</p>
+                        </li>
+                    ))}
+                </ul>
+            </div>
+
        </div>
     )
 }

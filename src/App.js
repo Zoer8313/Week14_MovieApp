@@ -3,9 +3,6 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import './App.css';
 import MovieList from "./Components/MovieList";
 import MovieCard from "./Components/MovieCard";
-import ReviewList from "./Components/ReviewList";
-import Reviews from "./Components/Reviews";
-import ReactStars from "./Components/ReactStars";
 
 
 class App extends Component {

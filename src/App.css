@@ -43,3 +43,8 @@ img {
 input[type = "radio"] {
   display: none;
 }
+
+ul {
+  border: solid black;
+  border-radius: 12px;
+}
